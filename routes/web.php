@@ -6,8 +6,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/contact', function () {
+    $title="Title From Route";
+    $books=['IT Book','Clean Code',"Dirty Code"];
+//    return view('contact.index');
+    return view('contact.index',['title'=>$title,'books'=>$books]);
+})->name('contact');
+
 Route::get('/about', function () {
-    return 'this is about page';
+//    return 'this is about page';
+    return view('about');
 })->name('about');
 
 Route::get('/user/{id}', function ($id) {
